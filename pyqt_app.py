@@ -12,6 +12,7 @@ except ImportError:
     sys.exit(1)
 import subprocess
 from pathlib import Path
+from typing import Optional
 
 # --- Constants ---
 UPSCALE_SCRIPT = "manga_upscale.py"
@@ -182,44 +183,55 @@ class MangaUpscalerGUI(QMainWindow):
         setattr(self, combo_box_name, combo_box)
         
         button = QPushButton("📂 Browse")
-        button.clicked.connect(lambda: self.select_model_path(combo_box))
+        button.clicked.connect(lambda: self.select_model_folder())
         
         layout.addWidget(label)
         layout.addWidget(combo_box)
         layout.addWidget(button)
         return widget
 
+    def select_model_folder(self):
+        dir_path = QFileDialog.getExistingDirectory(self, "Select Model Directory", str(MODEL_DIR))
+        if dir_path:
+            self.populate_models(model_dir_override=Path(dir_path))
+
     def select_model_path(self, combo_box):
         path, _ = QFileDialog.getOpenFileName(self, "Select Model File", str(MODEL_DIR), "Model Files (*.pth *.safetensors)")
         if path:
-            # Add the selected model to the list if it's not already there
             p = Path(path)
+            # Add the full path as user data
             if combo_box.findText(p.name) == -1:
-                combo_box.addItem(p.name)
+                combo_box.addItem(p.name, userData=str(p.absolute()))
             combo_box.setCurrentText(p.name)
 
-    def populate_models(self):
-        if not MODEL_DIR.exists():
-            self.log_console.append(f"Warning: Model directory not found at '{MODEL_DIR}'. Please run setup.")
+    def populate_models(self, model_dir_override: Optional[Path] = None):
+        current_model_dir = model_dir_override if model_dir_override else MODEL_DIR
+
+        if not current_model_dir.exists():
+            self.log_console.append(f"Warning: Model directory not found at '{current_model_dir}'.")
             return
 
-        models = [f.name for f in MODEL_DIR.glob("*.pth")] + [f.name for f in MODEL_DIR.glob("*.safetensors")]
+        models = [f for f in current_model_dir.glob("*.pth")] + [f for f in current_model_dir.glob("*.safetensors")]
         
-        # General-purpose models that should appear in both lists
-        general_models = [m for m in models if '4x-anime' in m.lower() or 'ultrasharp' in m.lower()]
+        self.bw_model_combo.clear()
+        self.color_model_combo.clear()
+        
+        # General-purpose models
+        general_models = [m for m in models if '4x-anime' in m.name.lower() or 'ultrasharp' in m.name.lower()]
         
         # B&W specific models
-        bw_models = [m for m in models if 'manga' in m.lower() or 'bw' in m.lower()]
+        bw_models = [m for m in models if 'manga' in m.name.lower() or 'bw' in m.name.lower()]
         
-        # Color specific models are those not in B&W or general lists
+        # Color specific models
         color_models = [m for m in models if m not in bw_models and m not in general_models]
 
-        # Combine general models with specific lists
         final_bw_models = sorted(list(set(bw_models + general_models)))
         final_color_models = sorted(list(set(color_models + general_models)))
 
-        self.bw_model_combo.addItems(final_bw_models if final_bw_models else ["No B&W models found"])
-        self.color_model_combo.addItems(final_color_models if final_color_models else ["No color models found"])
+        for model in final_bw_models:
+            self.bw_model_combo.addItem(model.name, userData=str(model.absolute()))
+        for model in final_color_models:
+            self.color_model_combo.addItem(model.name, userData=str(model.absolute()))
 
 
     def run_download(self, model_type):
@@ -261,8 +273,8 @@ class MangaUpscalerGUI(QMainWindow):
         command = [
             sys.executable, UPSCALE_SCRIPT, "upscale",
             "--output", output_path,
-            "--model-bw", self.bw_model_combo.currentText(),
-            "--model-color", self.color_model_combo.currentText()
+            "--model-bw", self.bw_model_combo.currentData(),
+            "--model-color", self.color_model_combo.currentData()
         ]
         if bw_path:
             command.extend(["--bw", bw_path])
