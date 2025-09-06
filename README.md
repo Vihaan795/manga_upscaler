@@ -113,6 +113,15 @@ python manga_upscale.py upscale \
     --model-color "4x_IllustrationJaNai_V2standard_DAT2_27k.safetensors"
 ```
 
+## Model Recommendations
+
+-   **For Black & White Manga**: The `MangaJaNai` models are specifically trained for B&W content and generally produce the best results.
+-   **For Color Manga/Illustrations**: The `IllustrationJaNai` models are optimized for color images.
+-   **For General Use (Both B&W and Color)**: The `4x-UltraSharp` and `4x-AnimeSharp` models are excellent all-rounders that work well on a variety of content.
+
+Experiment with different models to find the best one for your specific images!
+My personal best models are 4x-Animesharp and 4x-Ultrasharp.
+
 ## Acknowledgements & Contributions
 
 This project would not be possible without the incredible work of the following individuals and teams:
