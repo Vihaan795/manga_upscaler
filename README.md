@@ -11,6 +11,12 @@ A sleek, modern, and powerful GUI for upscaling manga and anime images, built wi
 - **Dual Interface**: Use the intuitive GUI or the powerful command-line interface (CLI) for automation.
 - **Cross-Platform**: Works on Windows, macOS, and Linux.
 
+## Google Colab Support
+
+For users without a powerful local GPU, we provide a Google Colab notebook for a seamless, cloud-based experience. This is the recommended way to get the fastest upscaling results without needing a high-end PC.
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Yui007/manga_upscaler/blob/main/Manga_Upscaler_Colab.ipynb)
+
 ## GUI Preview
 
 ![Manga Upscaler GUI](GUI.PNG)
