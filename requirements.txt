@@ -1,0 +1,9 @@
+PyQt6
+requests
+opencv_python
+numpy
+torch
+rich
+typer
+einops
+safetensors
